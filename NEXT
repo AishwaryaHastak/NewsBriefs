@@ -1,0 +1,55 @@
+TO DO
+1. Fine-Tune Model
+    Downlaod the T-5 model and fine-tune it on a new summary dataset
+
+
+
+2. More preprocessing -- see if needed -- maybe once more data is added
+  
+  2.1 Remove punctuations -- wait is this really needed? ouncs might be needed for summarizer tools to work better.
+
+3. More data sources
+  
+  3.1 Include more time frame -- maybe a whole week
+  
+  3.2 More data sources -- possibly RSS feeds
+  
+4. Display titles as summaries and maybe also as tags on the screen -- the user selects what tags they want to explore -- think about this
+
+  4.1. So we first group similar news -- and then summarize the content (take care not to skip important details)
+  
+  4.2. We then create a tag/title(of 1-4 words) for this group
+
+1. Maybe look for better/faster ways to work the tokenizer and vectors. Explore batch prcessing and other tokenizer techniques -- nltk or Transformers?
+
+5. Deployment -- dk yet - maybe think of some AWS deployment
+
+6. CI/CD -- not sure yet
+This model has to summarize around 20 something clusters each containing arnd 5-8 content files: 
+I want to host it on an applicaiton -- that eould update daily and feature these summaries.
+I want to use a free hosting sit -- maybe github.io 
+I want the code to auto run everyday at a certain time and get all the summaries of clusters -- becuase it takes a lot of time .so that the content is already available to anyone who veiws the website 
+
+--------------------------------------------------------------------------------------------------
+DONE
+
+okay, so the content file is too large for this.. Suggest some techniques to reduce the size of contents in each clusters --- maybe keep on;y the important parts. So that the final concatenation of all values is less than 7808 which is model limit. 
+1 option is I can individually summarize each content and then concatenate it right?
+
+So in that case I want to divide the model token limit by the number of files in each cluster, so that something from every content shouws up in the cluster summary
+
+
+1. automate the search for best hyperparamters values (for eps and min_samples)  -- DBSCAN Not working well -- check for problem
+    K-means any way to optimize cluster paramanters? 
+    -- Identify if clusters are dense/sparese using some metric like Inertia, Silhouette Score, etc.
+
+    ---> DONE -- Created a graph to calcualte Silhouette Score for a range of k values and choose the best
+
+
+
+
+
+
+
+
+
