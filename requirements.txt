@@ -11,5 +11,6 @@ pandas
 evaluate
 rouge_score
 numpy
+flask
 
 -e .
